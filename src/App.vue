@@ -1,15 +1,46 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  
+  <navBar />
+  <hero />
+  <ftSpeciality/>
+  <ftPopular/>
+  <howitWorks/>
+  <foodGallery/>
+  <customersReview/>
+  <orderNow/>
+  <footerSection/>
+  <scrollTop/>
+  <loaderGif/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import navBar from './components/header/navBar.vue'
+import hero from './components/hero.vue'
+import ftSpeciality from './components/ftSpeciality.vue'
+import ftPopular from './components/ftPopular.vue'
+import howitWorks from './components/howitWorks.vue'
+import foodGallery from './components/foodGallery.vue'
+import customersReview from './components/customersReview.vue'
+import orderNow from './components/orderNow.vue'
+import footerSection from './components/footer/footerSection.vue'
+import scrollTop from './components/footer/scrollTop.vue'
+import loaderGif from './components/loaderGif.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    navBar,
+    hero,
+    ftSpeciality,
+    ftPopular,
+    howitWorks,
+    foodGallery,
+    customersReview,
+    orderNow,
+    footerSection,
+    scrollTop,
+    loaderGif,
   }
 }
 </script>
@@ -22,5 +53,110 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root{
+  --red:#ff3838;
+}
+
+*{
+  font-family: 'Nunito', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition:all .2s linear;
+}
+
+*::selection{
+  background:var(--red);
+  color:#fff;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body{
+  background:#f7f7f7;
+}
+
+section{
+  padding:2rem 9%;
+}
+
+/* button css */
+.btn{
+  display: inline-block;
+  padding:.8rem 3rem;
+  border:.2rem solid var(--red);
+  color:var(--red);
+  cursor: pointer;
+  font-size: 1.7rem;
+  border-radius: .5rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  margin-top: 1rem;
+}
+
+.btn::before{
+  content: '';
+  position: absolute;
+  top:0; right: 0;
+  width:0%;
+  height:100%;
+  background:var(--red);
+  transition: .3s linear;
+  z-index: -1;
+}
+
+.btn:hover::before{
+  width:100%;
+  left: 0;
+}
+
+.btn:hover{
+  color:#fff;
+}
+/* button css  ends*/
+
+.heading{
+  text-align: center;
+  font-size: 3.5rem;
+  padding:1rem;
+  color:#666;
+}
+
+.heading span{
+  color:var(--red);
+}
+
+
+/* responsive css section */
+
+@media(max-width:991px){
+
+  html{
+    font-size: 55%;
+  }
+
+  section{
+    padding:2rem;
+  }
+
+}
+
+@media(max-width:450px){
+
+  html{
+    font-size: 50%;
+  }
 }
 </style>
